@@ -11,6 +11,17 @@ public class Menjacnica implements MenjacnicaInterfejs {
 
 	@Override
 	public void dodajKurs(Kurs k, Valuta v) {
+		for(Valuta valuta: valute){
+			if(valuta.equals(v)){
+				for(Kurs kurs: v.getKursevi()){
+					if(kurs.getDatum().YEAR==k.getDatum().YEAR && kurs.getDatum().MONTH==k.getDatum().MONTH && kurs.getDatum().DAY_OF_MONTH==k.getDatum().DAY_OF_MONTH){
+						throw new RuntimeException("Kurs za ovaj datum vec postoji!");
+					}
+				}
+				v.getKursevi().add(k);
+				return;
+			}
+		}
 	
 		
 	}
