@@ -11,25 +11,33 @@ public class Kurs {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if(datum.after(new GregorianCalendar()))
 		this.datum = datum;
+		else throw new RuntimeException("Ne moze se menjati kurs za datum koji je prosao!");
 	}
 	public double getProdajni() {
 		return prodajni;
 	}
 	public void setProdajni(double prodajni) {
+		if(prodajni>0)
 		this.prodajni = prodajni;
+		else throw new RuntimeException("Prodajni kurs mora biti veci od 0!");
 	}
 	public double getKupovni() {
 		return kupovni;
 	}
 	public void setKupovni(double kupovni) {
+		if(kupovni>0)
 		this.kupovni = kupovni;
+		else throw new RuntimeException("Kupovni kurs mora biti veci od 0!");
 	}
 	public double getSrednji() {
 		return srednji;
 	}
 	public void setSrednji(double srednji) {
+		if(srednji>0)
 		this.srednji = srednji;
+		else throw new RuntimeException("Srednji kurs mora biti veci od 0!");
 	}
 	@Override
 	public int hashCode() {

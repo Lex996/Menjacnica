@@ -11,13 +11,19 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv!=null && naziv!="")
 		this.naziv = naziv;
+		else throw new RuntimeException("Naziv ne moze biti prazan");
 	}
 	public String getSkraceniNaziv() {
+		
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv!=null && skraceniNaziv!="" )
 		this.skraceniNaziv = skraceniNaziv;
+		else throw new RuntimeException("Skraceni naziv ne moze biti prazan");
+		
 	}
 	public LinkedList<Kurs> getKursevi() {
 		return kursevi;
