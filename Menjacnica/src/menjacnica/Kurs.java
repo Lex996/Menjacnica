@@ -57,7 +57,7 @@ public class Kurs {
 	public boolean equals(Object obj) {
 		if(obj instanceof Kurs){
 			Kurs k=(Kurs) obj;
-			if(k.getDatum().equals(getDatum()) && k.getKupovni()==getKupovni() && k.getProdajni()==getProdajni() && k.getSrednji()==getSrednji()){
+			if(k.getDatum().YEAR==getDatum().YEAR && k.getDatum().MONTH==getDatum().MONTH && k.getDatum().DAY_OF_MONTH==getDatum().DAY_OF_MONTH && k.getKupovni()==getKupovni() && k.getProdajni()==getProdajni() && k.getSrednji()==getSrednji()){
 				return true;
 			}
 		}
